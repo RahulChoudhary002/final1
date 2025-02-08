@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #333;
+                width: 150px;
+                text-align: center;
+                border-radius: 5px;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">MyLogo</div>
+        <ul id="nav-links">
+            <li><a href="boot2.html">Home</a></li>
+            <li><a href="boot.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>
